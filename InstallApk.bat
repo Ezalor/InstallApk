@@ -180,9 +180,9 @@ pause & exit
 
 :x
 echo 请选择连接已保存的设备：
-choice /C 12 /N /M "[1] 连手机    [2] 连电视"
+choice /C 12 /N /M "[1] 连手机    [2] 连盒子"
 if "%errorlevel%"=="1" call "%~dp0连手机.bat" & goto :start
-if "%errorlevel%"=="2" call "%~dp0连电视.bat" & goto :start
+if "%errorlevel%"=="2" call "%~dp0连盒子.bat" & goto :start
 
 
 :clean
