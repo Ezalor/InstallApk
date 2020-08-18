@@ -136,6 +136,10 @@ if not defined w goto s
 if not exist %w% cls & echo 文件不存在，请重新拖放…… & echo+ & goto s
 
 echo+
+call "%~dp0aapt.bat" %w%
+
+
+echo+
 echo adb -s %h% install -r %w%
 echo+
 
@@ -198,6 +202,11 @@ if "%errorlevel%"=="2" call "%~dp0连盒子.bat" & echo+ & goto :start
 	del %~dp0tmptmp3.txt >nul 2>nul
 	del %~dp0tmptmp4.txt >nul 2>nul
 	del %~dp0tmptmp5.txt >nul 2>nul
+	del %~dp0tmpaapt.txt >nul 2>nul
+	del %~dp0tmptt1.txt >nul 2>nul
+	del %~dp0tmptt11.txt >nul 2>nul
+	del %~dp0tmptt2.txt >nul 2>nul
+	del %~dp0tmptt22.txt >nul 2>nul
 
 
 
