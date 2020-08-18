@@ -54,7 +54,7 @@ if not defined g1 (
 echo+
 echo 已选择 %g1%
 echo+
-call :clean
+::call :clean
 
 goto s
 
@@ -69,7 +69,7 @@ if not defined g2 (
 echo+
 echo 已选择 %g2%
 echo+
-call :clean
+::call :clean
 
 goto s
 
@@ -84,7 +84,7 @@ if not defined g3 (
 echo+
 echo 已选择 %g3%
 echo+
-call :clean
+::call :clean
 
 goto s
 
@@ -99,7 +99,7 @@ if not defined g4 (
 echo+
 echo 已选择 %g4%
 echo+
-call :clean
+::call :clean
 
 goto s
 
@@ -114,7 +114,7 @@ if not defined g5 (
 echo+
 echo 已选择 %g5%
 echo+
-call :clean
+::call :clean
 
 goto s
 
@@ -155,7 +155,10 @@ if "%result%"=="Success" (
 	echo+
 )
 
-echo 按任意键退出...
+call :clean
+echo+
+
+echo ~~~按任意键退出~~~
 pause >nul
 exit
 
@@ -181,8 +184,8 @@ pause & exit
 :x
 echo 请选择连接已保存的设备：
 choice /C 12 /N /M "[1] 连手机    [2] 连盒子"
-if "%errorlevel%"=="1" call "%~dp0连手机.bat" & goto :start
-if "%errorlevel%"=="2" call "%~dp0连盒子.bat" & goto :start
+if "%errorlevel%"=="1" call "%~dp0连手机.bat" & echo+ & goto :start
+if "%errorlevel%"=="2" call "%~dp0连盒子.bat" & echo+ & goto :start
 
 
 :clean
